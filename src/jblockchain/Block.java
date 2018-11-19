@@ -1,9 +1,9 @@
 package jblockchain;
-
+import chainframework.BlockInterface;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Block {
+public class Block implements BlockInterface {
 	
 	public String hash;
 	public String previousHash; 
@@ -22,13 +22,12 @@ public class Block {
 	
 	//Calculate new hash based on blocks contents
 	public String calculateHash() {
-		String calculatedhash = StringUtil.applySha256( 
+		return StringUtil.applySha256(
 				previousHash +
 				Long.toString(timeStamp) +
 				Integer.toString(nonce) + 
 				merkleRoot
 				);
-		return calculatedhash;
 	}
 	
 	//Increases nonce value until hash target is reached.
@@ -47,7 +46,7 @@ public class Block {
 		//process transaction and check if valid, unless block is genesis block then ignore.
 		if(transaction == null) return false;		
 		if((!"0".equals(previousHash))) {
-			if((transaction.processTransaction() != true)) {
+			if((!transaction.processTransaction())) {
 				System.out.println("Transaction failed to process. Discarded.");
 				return false;
 			}

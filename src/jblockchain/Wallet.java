@@ -9,10 +9,13 @@ public class Wallet {
 	
 	public PrivateKey privateKey;
 	public PublicKey publicKey;
+	public String walletName;
 	
 	public HashMap<String,TransactionOutput> UTXOs = new HashMap<String,TransactionOutput>();
 	
-	public Wallet() {
+	public Wallet(String walletName) {
+
+		this.walletName = walletName;
 		generateKeyPair();
 	}
 		
