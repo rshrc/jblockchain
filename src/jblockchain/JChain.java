@@ -28,9 +28,9 @@ public class JChain extends JBlockchain {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("EnterX 1st Wallet Name : ");
+        System.out.println("Enter 1st Wallet Name : ");
         Wallet sender = new Wallet(scanner.next());
-        System.out.println("Enter 2nd Waller Name : ");
+        System.out.println("Enter 2nd Wallet Name : ");
         Wallet receiver = new Wallet(scanner.next());
 
 
