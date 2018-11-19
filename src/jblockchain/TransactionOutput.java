@@ -1,8 +1,10 @@
 package jblockchain;
 
+import chainframework.TransactionOutputInterface;
+
 import java.security.PublicKey;
 
-public class TransactionOutput {
+public class TransactionOutput implements TransactionOutputInterface {
 	public String id;
 	public PublicKey reciepient; //also known as the new owner of these coins.
 	public float value; //the amount of coins they own

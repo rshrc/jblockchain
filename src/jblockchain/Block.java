@@ -38,7 +38,7 @@ public class Block implements BlockInterface {
 			nonce ++;
 			hash = calculateHash();
 		}
-		System.out.println("Block Mined!!! : " + hash);
+		System.out.println("Block Mined : " + hash);
 	}
 	
 	//Add transactions to this block

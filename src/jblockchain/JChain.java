@@ -24,11 +24,11 @@ public class JChain extends JBlockchain {
     public static void main(String[] args) {
         Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
 
-        Wallet coinbase = new Wallet("Coinbase");
+        Wallet coinbase = new Wallet("JCoinBase");
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter 1st Wallet Name : ");
+        System.out.println("EnterX 1st Wallet Name : ");
         Wallet sender = new Wallet(scanner.next());
         System.out.println("Enter 2nd Waller Name : ");
         Wallet receiver = new Wallet(scanner.next());

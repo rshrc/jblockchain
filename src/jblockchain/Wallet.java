@@ -4,8 +4,9 @@ import java.security.spec.ECGenParameterSpec;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import chainframework.WalletInterface;
 
-public class Wallet {
+public class Wallet implements WalletInterface {
 	
 	public PrivateKey privateKey;
 	public PublicKey publicKey;
