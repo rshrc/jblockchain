@@ -4,15 +4,19 @@ import java.security.spec.ECGenParameterSpec;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import chainframework.WalletInterface;
 
-public class Wallet {
+public class Wallet implements WalletInterface {
 	
 	public PrivateKey privateKey;
 	public PublicKey publicKey;
+	public String walletName;
 	
 	public HashMap<String,TransactionOutput> UTXOs = new HashMap<String,TransactionOutput>();
 	
-	public Wallet() {
+	public Wallet(String walletName) {
+
+		this.walletName = walletName;
 		generateKeyPair();
 	}
 		

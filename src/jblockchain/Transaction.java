@@ -1,8 +1,9 @@
 package jblockchain;
 import java.security.*;
 import java.util.ArrayList;
+import chainframework.TransactionInterface;
 
-public class Transaction {
+public class Transaction implements TransactionInterface {
 	
 	public String transactionId; //Contains a hash of transaction*
 	public PublicKey sender; //Senders address/public key.
@@ -25,7 +26,7 @@ public class Transaction {
 	
 	public boolean processTransaction() {
 		
-		if(verifySignature() == false) {
+		if(!verifySignature()) {
 			System.out.println("#Transaction Signature failed to verify");
 			return false;
 		}
@@ -89,7 +90,7 @@ public class Transaction {
 		return total;
 	}
 	
-	private String calulateHash() {
+	public String calulateHash() {
 		sequence++; //increase the sequence to avoid 2 identical transactions having the same hash
 		return StringUtil.applySha256(
 				StringUtil.getStringFromKey(sender) +
